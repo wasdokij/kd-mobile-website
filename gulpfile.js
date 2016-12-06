@@ -24,7 +24,7 @@ const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const revCollector = require('gulp-rev-collector');
 const exec = require('child_process').exec;
-const CDN = 'yourCDNLink';
+const CDN = '/Public';
 var webpackConfig = {
 	resolve: {
 		root: path.join(__dirname, 'node_modules'),
