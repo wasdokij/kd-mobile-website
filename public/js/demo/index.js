@@ -40,31 +40,67 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(28);
+	module.exports = __webpack_require__(2);
 
 
 /***/ },
-
-/***/ 28:
+/* 1 */,
+/* 2 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	var apiURL = 'https://api.github.com/repos/vuejs/vue/commits?per_page=3&sha=';
+
+	/**
+	 * Actual demo
+	 */
+
+	var demo = new Vue({
+
+	  el: '#demo',
+
+	  data: {
+	    branches: ['master', 'dev'],
+	    currentBranch: 'master',
+	    commits: null
+	  },
+
+	  created: function created() {
+	    this.fetchData();
+	  },
+
+	  watch: {
+	    currentBranch: 'fetchData'
+	  },
+
+	  filters: {
+	    truncate: function truncate(v) {
+	      var newline = v.indexOf('\n');
+	      return newline > 0 ? v.slice(0, newline) : v;
+	    },
+	    formatDate: function formatDate(v) {
+	      return v.replace(/T|Z/g, ' ');
+	    }
+	  },
+
+	  methods: {
+	    fetchData: function fetchData() {
+	      var xhr = new XMLHttpRequest();
+	      var self = this;
+	      xhr.open('GET', apiURL + self.currentBranch);
+	      xhr.onload = function () {
+	        self.commits = JSON.parse(xhr.responseText);
+	        console.log(self.commits[0].html_url);
+	      };
+	      xhr.send();
+	    }
+	  }
 	});
-	exports.say = say;
-	// 你封装的工具库
-
-	function say(msg) {
-	  console.log(msg);
-	}
 
 /***/ }
-
-/******/ });
+/******/ ]);

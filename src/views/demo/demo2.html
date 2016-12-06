@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="screen-orientation" content="portrait">
+	<title>vue demo2</title>
+	<link rel="stylesheet" type="text/css" :href="../../css/demo/demo2.css"/>
+</head>
+<body>
+	<div id="app">
+	  <ul is="transition-group">
+	    <li v-for="user in users" class="user" :key="user['.key']">
+	      <span>{{user.name}} - {{user.email}}</span>
+	      <button v-on:click="removeUser(user)">X</button>
+	    </li>
+	  </ul>
+	  <form id="form" v-on:submit.prevent="addUser">
+	    <input type="text" v-model="newUser.name" placeholder="Username">
+	    <input type="email" v-model="newUser.email" placeholder="email@email.com">
+	    <input type="submit" value="Add User">
+	  </form>
+	  <ul class="errors">
+	    <li v-show="!validation.name">Name cannot be empty.</li>
+	    <li v-show="!validation.email">Please provide a valid email address.</li>
+	  </ul>
+	</div>
+	<script src="../../js/lib/vue.js"></script>
+	<script src="../../js/demo/demo2.js"></script>
+</body>
+</html>

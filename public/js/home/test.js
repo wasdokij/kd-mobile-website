@@ -45,23 +45,23 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(28);
+	module.exports = __webpack_require__(29);
 
 
 /***/ },
 
-/***/ 3:
+/***/ 4:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(4)
-	__vue_script__ = __webpack_require__(8)
+	__webpack_require__(5)
+	__vue_script__ = __webpack_require__(9)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\home\\home-header.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(9)
+	__vue_template__ = __webpack_require__(10)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -87,16 +87,16 @@
 
 /***/ },
 
-/***/ 4:
+/***/ 5:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(5);
+	var content = __webpack_require__(6);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
+	var update = __webpack_require__(8)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -114,10 +114,10 @@
 
 /***/ },
 
-/***/ 5:
+/***/ 6:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)();
+	exports = module.exports = __webpack_require__(7)();
 	// imports
 
 
@@ -129,7 +129,7 @@
 
 /***/ },
 
-/***/ 6:
+/***/ 7:
 /***/ function(module, exports) {
 
 	/*
@@ -186,7 +186,7 @@
 
 /***/ },
 
-/***/ 7:
+/***/ 8:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -409,7 +409,7 @@
 
 /***/ },
 
-/***/ 8:
+/***/ 9:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -437,19 +437,19 @@
 
 /***/ },
 
-/***/ 9:
+/***/ 10:
 /***/ function(module, exports) {
 
 	module.exports = "\n<h1>\n\t我是home业务模块下的公共头部,修改我home业务模块下的js都会编译\n</h1>\n";
 
 /***/ },
 
-/***/ 28:
+/***/ 29:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _homeHeader = __webpack_require__(3);
+	var _homeHeader = __webpack_require__(4);
 
 	var _homeHeader2 = _interopRequireDefault(_homeHeader);
 
